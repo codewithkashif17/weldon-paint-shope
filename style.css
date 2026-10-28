@@ -1,6 +1,9 @@
 * {
   box-sizing: border-box;
 }
+html {
+  scroll-behavior: smooth;
+}
 body {
   margin: 0;
   font-family: "Poppins", Arial, sans-serif;
@@ -26,9 +29,6 @@ h3 {
 }
 p {
   margin: 0 0 8px;
-}
-svg {
-  max-width: 100%;
 }
 
 .material-symbols-outlined {
@@ -91,6 +91,12 @@ svg {
   margin: 0 auto;
   padding: 16px;
 }
+.main {
+  flex: 1;
+  min-width: 0;
+}
+
+/* Sidebar */
 .sidebar {
   background-color: #ffffff;
   border-radius: 10px;
@@ -115,10 +121,6 @@ svg {
   border-radius: 6px;
   background-color: #f4f6fa;
 }
-.sidebar li a.active {
-  background-color: #1b3a6b;
-  color: #ffffff;
-}
 .side-left {
   display: flex;
   align-items: center;
@@ -136,10 +138,6 @@ svg {
 }
 .side-help p {
   margin: 0;
-}
-.main {
-  flex: 1;
-  min-width: 0;
 }
 
 /* Hero */
@@ -159,10 +157,11 @@ svg {
   color: #ffffff;
   font-size: 28px;
 }
-.hero-img svg {
+.hero-img {
   width: 150px;
   height: 150px;
 }
+
 .btn {
   display: inline-flex;
   align-items: center;
@@ -182,21 +181,9 @@ svg {
   display: flex;
   align-items: center;
   gap: 8px;
-  margin: 28px 0 14px;
+  margin: 30px 0 14px;
   font-size: 22px;
-}
-.cat-head {
-  background-color: #ffffff;
-  border-radius: 10px;
-  padding: 20px;
-  margin-bottom: 20px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-}
-.cat-head h1 {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  font-size: 26px;
+  scroll-margin-top: 90px;
 }
 
 /* Cards */
@@ -220,6 +207,11 @@ svg {
   align-items: center;
   justify-content: center;
   padding: 20px;
+  background-color: #e8edf6;
+}
+.card-img svg {
+  width: 120px;
+  height: 120px;
 }
 .card-body {
   display: flex;
@@ -238,10 +230,10 @@ svg {
   margin-top: auto;
   align-self: flex-start;
 }
-.price {
+.card-body .price {
   font-weight: 700;
-  color: #c2410c !important;
-  font-size: 16px !important;
+  font-size: 16px;
+  color: #c2410c;
 }
 .badge {
   position: absolute;
@@ -255,69 +247,25 @@ svg {
   border-radius: 4px;
 }
 
-/* Swatches */
-.swatches {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 14px;
-}
-.swatch {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: 70px;
-  font-size: 12px;
-}
-.dot {
-  width: 56px;
-  height: 56px;
-  border-radius: 50%;
-  border: 3px solid #ffffff;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.25);
-  margin-bottom: 4px;
-}
-
-/* Features and reviews */
+/* Features */
 .features {
   display: flex;
   flex-wrap: wrap;
   gap: 16px;
 }
-.feature,
-.quote {
+.feature {
   flex: 1 1 220px;
   background-color: #ffffff;
   border-radius: 10px;
   padding: 18px;
-  margin: 0;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 .feature .big {
   color: #f28c1e;
 }
-.feature p,
-.quote p {
+.feature p {
   font-size: 14px;
   color: #555555;
-}
-.quote .material-symbols-outlined {
-  color: #f28c1e;
-  font-size: 30px;
-}
-.quote cite {
-  font-weight: 600;
-  font-style: normal;
-  color: #1b3a6b;
-}
-
-.cta {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  background-color: #fff3e3;
-  border-radius: 10px;
-  padding: 20px;
-  margin-top: 24px;
 }
 
 /* Footer */
@@ -363,7 +311,7 @@ svg {
   .hero h1 {
     font-size: 36px;
   }
-  .hero-img svg {
+  .hero-img {
     width: 200px;
     height: 200px;
   }
@@ -372,13 +320,6 @@ svg {
   }
   .footer-cols {
     flex-direction: row;
-  }
-  .cta {
-    flex-direction: row;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: space-between;
-    gap: 12px;
   }
 }
 

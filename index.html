@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Home | Weldon Paint Store</title>
+    <title>Weldon Paint Store</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -13,12 +13,56 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
+    <!-- Reusable SVG shapes -->
+    <svg width="0" height="0" style="position: absolute" aria-hidden="true">
+      <symbol id="can" viewBox="0 0 120 120">
+        <path
+          d="M30 38Q60 8 90 38"
+          fill="none"
+          stroke="#6b7280"
+          stroke-width="4"
+        />
+        <rect x="26" y="34" width="68" height="72" rx="6" fill="#d1d5db" />
+        <rect x="26" y="52" width="68" height="36" fill="currentColor" />
+        <ellipse cx="60" cy="34" rx="34" ry="8" fill="#9ca3af" />
+        <ellipse cx="60" cy="33" rx="28" ry="5" fill="currentColor" />
+        <text
+          x="60"
+          y="75"
+          font-size="11"
+          font-weight="700"
+          text-anchor="middle"
+          fill="#ffffff"
+          stroke="#00000066"
+          stroke-width=".4"
+        >
+          WELDON
+        </text>
+      </symbol>
+      <symbol id="brush" viewBox="0 0 120 120">
+        <rect x="52" y="10" width="16" height="50" rx="6" fill="#b45309" />
+        <rect x="42" y="58" width="36" height="18" fill="#9ca3af" />
+        <path d="M42 76h36l-4 32H46z" fill="currentColor" />
+      </symbol>
+      <symbol id="roller" viewBox="0 0 120 120">
+        <rect x="18" y="18" width="78" height="28" rx="8" fill="currentColor" />
+        <path
+          d="M96 32h10v26H60v14"
+          fill="none"
+          stroke="#6b7280"
+          stroke-width="5"
+        />
+        <rect x="54" y="72" width="12" height="36" rx="5" fill="#b45309" />
+      </symbol>
+    </svg>
+
+    <!-- Navbar -->
     <header class="navbar">
-      <a class="brand" href="index.html">
+      <a class="brand" href="#home">
         <svg viewBox="0 0 40 40" width="38" height="38" aria-hidden="true">
           <circle cx="20" cy="20" r="19" fill="#f28c1e" />
           <path
-            d="M11 12 l5 17 l4-11 l4 11 l5-17"
+            d="M11 12l5 17 4-11 4 11 5-17"
             fill="none"
             stroke="#fff"
             stroke-width="3"
@@ -30,28 +74,23 @@
       </a>
       <ul class="nav-links">
         <li>
-          <a class="active" href="index.html"
+          <a class="active" href="#home"
             ><span class="material-symbols-outlined">home</span> Home</a
           >
         </li>
         <li>
-          <a href="interior.html"
+          <a href="#interior"
             ><span class="material-symbols-outlined">format_paint</span>
             Products</a
           >
         </li>
         <li>
-          <a href="index.html#colors"
-            ><span class="material-symbols-outlined">palette</span> Colours</a
-          >
-        </li>
-        <li>
-          <a href="index.html#about"
+          <a href="#about"
             ><span class="material-symbols-outlined">info</span> About</a
           >
         </li>
         <li>
-          <a href="index.html#contact"
+          <a href="#contact"
             ><span class="material-symbols-outlined">call</span> Contact</a
           >
         </li>
@@ -59,6 +98,7 @@
     </header>
 
     <div class="page">
+      <!-- Sidebar -->
       <aside class="sidebar">
         <h2>
           <span class="material-symbols-outlined">category</span> Product
@@ -66,7 +106,7 @@
         </h2>
         <ul>
           <li>
-            <a href="interior.html"
+            <a href="#interior"
               ><span class="side-left"
                 ><span class="material-symbols-outlined">home</span> Interior
                 Paints</span
@@ -74,7 +114,7 @@
             >
           </li>
           <li>
-            <a href="exterior.html"
+            <a href="#exterior"
               ><span class="side-left"
                 ><span class="material-symbols-outlined">apartment</span>
                 Exterior Paints</span
@@ -82,7 +122,7 @@
             >
           </li>
           <li>
-            <a href="wood.html"
+            <a href="#wood"
               ><span class="side-left"
                 ><span class="material-symbols-outlined">carpenter</span> Wood
                 Finishes</span
@@ -90,501 +130,370 @@
             >
           </li>
           <li>
-            <a href="enamel.html"
+            <a href="#enamel"
               ><span class="side-left"
                 ><span class="material-symbols-outlined">construction</span>
-                Enamel & Metal Paints</span
+                Enamel &amp; Metal</span
               ><span class="material-symbols-outlined">chevron_right</span></a
             >
           </li>
           <li>
-            <a href="primers.html"
+            <a href="#primers"
               ><span class="side-left"
-                ><span class="material-symbols-outlined">layers</span> Primers &
-                Putty</span
+                ><span class="material-symbols-outlined">layers</span> Primers
+                &amp; Putty</span
               ><span class="material-symbols-outlined">chevron_right</span></a
             >
           </li>
           <li>
-            <a href="tools.html"
+            <a href="#tools"
               ><span class="side-left"
-                ><span class="material-symbols-outlined">brush</span> Brushes &
-                Tools</span
+                ><span class="material-symbols-outlined">brush</span> Brushes
+                &amp; Tools</span
               ><span class="material-symbols-outlined">chevron_right</span></a
             >
           </li>
         </ul>
         <div class="side-help">
           <span class="material-symbols-outlined">support_agent</span>
-          <p>
-            Need help choosing a colour? Call us on
-            <strong>03369188433</strong>
-          </p>
+          <p>Need help choosing a colour? Call <strong>03443248489</strong></p>
         </div>
       </aside>
 
       <main class="main">
-        <section class="hero">
+        <!-- Hero -->
+        <section class="hero" id="home">
           <div class="hero-text">
             <h1>Colour your world with Weldon</h1>
             <p>
               Interior, exterior, wood and metal paints with everything you need
               to finish the job.
             </p>
-            <a class="btn" href="interior.html"
+            <a class="btn" href="#interior"
               ><span class="material-symbols-outlined">format_paint</span> Shop
               paints</a
             >
           </div>
-          <div class="hero-img">
-            <svg
-              viewBox="0 0 120 120"
-              width="120"
-              height="120"
-              aria-hidden="true"
-            >
-              <path
-                d="M30 38 Q60 8 90 38"
-                fill="none"
-                stroke="#6b7280"
-                stroke-width="4"
-              />
-              <rect
-                x="26"
-                y="34"
-                width="68"
-                height="72"
-                rx="6"
-                fill="#d1d5db"
-              />
-              <rect
-                x="26"
-                y="52"
-                width="68"
-                height="36"
-                fill="#f28c1e"
-                stroke="#9ca3af"
-                stroke-width="1"
-              />
-              <ellipse cx="60" cy="34" rx="34" ry="8" fill="#9ca3af" />
-              <ellipse cx="60" cy="33" rx="28" ry="5" fill="#f28c1e" />
-              <path d="M40 33 v12 a4 4 0 0 0 8 0 v-12 z" fill="#f28c1e" />
-              <text
-                x="60"
-                y="75"
-                font-size="11"
-                font-weight="700"
-                text-anchor="middle"
-                fill="#ffffff"
-                stroke="#00000055"
-                stroke-width=".4"
-              >
-                WELDON
-              </text>
-            </svg>
-          </div>
+          <svg class="hero-img" style="color: #f28c1e"><use href="#can" /></svg>
         </section>
 
-        <h2 class="title">
-          <span class="material-symbols-outlined">star</span> Featured products
+        <!-- Interior -->
+        <h2 class="title" id="interior">
+          <span class="material-symbols-outlined">home</span> Interior Paints
         </h2>
         <div class="cards">
           <article class="card">
             <span class="badge">New</span>
-            <div class="card-img" style="background-color: #f5f0e633">
-              <svg
-                viewBox="0 0 120 120"
-                width="120"
-                height="120"
-                aria-hidden="true"
-              >
-                <path
-                  d="M30 38 Q60 8 90 38"
-                  fill="none"
-                  stroke="#6b7280"
-                  stroke-width="4"
-                />
-                <rect
-                  x="26"
-                  y="34"
-                  width="68"
-                  height="72"
-                  rx="6"
-                  fill="#d1d5db"
-                />
-                <rect
-                  x="26"
-                  y="52"
-                  width="68"
-                  height="36"
-                  fill="#f5f0e6"
-                  stroke="#9ca3af"
-                  stroke-width="1"
-                />
-                <ellipse cx="60" cy="34" rx="34" ry="8" fill="#9ca3af" />
-                <ellipse cx="60" cy="33" rx="28" ry="5" fill="#f5f0e6" />
-                <path d="M40 33 v12 a4 4 0 0 0 8 0 v-12 z" fill="#f5f0e6" />
-                <text
-                  x="60"
-                  y="75"
-                  font-size="11"
-                  font-weight="700"
-                  text-anchor="middle"
-                  fill="#ffffff"
-                  stroke="#00000055"
-                  stroke-width=".4"
-                >
-                  WELDON
-                </text>
-              </svg>
+            <div class="card-img">
+              <svg style="color: #8ec5e8"><use href="#can" /></svg>
             </div>
             <div class="card-body">
-              <h3>Emulsion White</h3>
-              <p>Bright matt finish with great coverage. 4 L.</p>
-              <p class="price">Rs 3,200</p>
-              <a
-                class="btn btn-dark"
-                href="https://wa.me/923001234567"
-                target="_blank"
-                ><span class="material-symbols-outlined">shopping_cart</span>
-                Order now</a
-              >
+              <h3>Sky Blue</h3>
+              <p>Calm soft-sheen wall colour. 4 L</p>
+              <p class="price">Rs 3,450</p>
+              <a class="btn btn-dark" href="#contact">Order now</a>
             </div>
           </article>
           <article class="card">
+            <div class="card-img">
+              <svg style="color: #a9c4a0"><use href="#can" /></svg>
+            </div>
+            <div class="card-body">
+              <h3>Sage Green</h3>
+              <p>Earthy washable emulsion. 4 L</p>
+              <p class="price">Rs 3,450</p>
+              <a class="btn btn-dark" href="#contact">Order now</a>
+            </div>
+          </article>
+          <article class="card">
+            <div class="card-img">
+              <svg style="color: #f4b393"><use href="#can" /></svg>
+            </div>
+            <div class="card-body">
+              <h3>Sunset Peach</h3>
+              <p>Warm tone for cosy rooms. 4 L</p>
+              <p class="price">Rs 3,450</p>
+              <a class="btn btn-dark" href="#contact">Order now</a>
+            </div>
+          </article>
+          <article class="card">
+            <div class="card-img">
+              <svg style="color: #f6e58d"><use href="#can" /></svg>
+            </div>
+            <div class="card-body">
+              <h3>Lemon Cream</h3>
+              <p>Cheerful kids-room shade. 4 L</p>
+              <p class="price">Rs 3,450</p>
+              <a class="btn btn-dark" href="#contact">Order now</a>
+            </div>
+          </article>
+        </div>
+
+        <!-- Exterior -->
+        <h2 class="title" id="exterior">
+          <span class="material-symbols-outlined">apartment</span> Exterior
+          Paints
+        </h2>
+        <div class="cards">
+          <article class="card">
             <span class="badge">New</span>
-            <div class="card-img" style="background-color: #fafafa33">
-              <svg
-                viewBox="0 0 120 120"
-                width="120"
-                height="120"
-                aria-hidden="true"
-              >
-                <path
-                  d="M30 38 Q60 8 90 38"
-                  fill="none"
-                  stroke="#6b7280"
-                  stroke-width="4"
-                />
-                <rect
-                  x="26"
-                  y="34"
-                  width="68"
-                  height="72"
-                  rx="6"
-                  fill="#d1d5db"
-                />
-                <rect
-                  x="26"
-                  y="52"
-                  width="68"
-                  height="36"
-                  fill="#fafafa"
-                  stroke="#9ca3af"
-                  stroke-width="1"
-                />
-                <ellipse cx="60" cy="34" rx="34" ry="8" fill="#9ca3af" />
-                <ellipse cx="60" cy="33" rx="28" ry="5" fill="#fafafa" />
-                <path d="M40 33 v12 a4 4 0 0 0 8 0 v-12 z" fill="#fafafa" />
-                <text
-                  x="60"
-                  y="75"
-                  font-size="11"
-                  font-weight="700"
-                  text-anchor="middle"
-                  fill="#ffffff"
-                  stroke="#00000055"
-                  stroke-width=".4"
-                >
-                  WELDON
-                </text>
-              </svg>
+            <div class="card-img">
+              <svg style="color: #fafafa"><use href="#can" /></svg>
             </div>
             <div class="card-body">
               <h3>Sun Shield White</h3>
-              <p>Heat reflective, 7 year warranty. 4 L.</p>
+              <p>Heat reflective, long warranty. 4 L</p>
               <p class="price">Rs 5,200</p>
-              <a
-                class="btn btn-dark"
-                href="https://wa.me/923001234567"
-                target="_blank"
-                ><span class="material-symbols-outlined">shopping_cart</span>
-                Order now</a
-              >
+              <a class="btn btn-dark" href="#contact">Order now</a>
             </div>
           </article>
           <article class="card">
-            <div class="card-img" style="background-color: #a86a3233">
-              <svg
-                viewBox="0 0 120 120"
-                width="120"
-                height="120"
-                aria-hidden="true"
-              >
-                <path
-                  d="M30 38 Q60 8 90 38"
-                  fill="none"
-                  stroke="#6b7280"
-                  stroke-width="4"
-                />
-                <rect
-                  x="26"
-                  y="34"
-                  width="68"
-                  height="72"
-                  rx="6"
-                  fill="#d1d5db"
-                />
-                <rect
-                  x="26"
-                  y="52"
-                  width="68"
-                  height="36"
-                  fill="#a86a32"
-                  stroke="#9ca3af"
-                  stroke-width="1"
-                />
-                <ellipse cx="60" cy="34" rx="34" ry="8" fill="#9ca3af" />
-                <ellipse cx="60" cy="33" rx="28" ry="5" fill="#a86a32" />
-                <path d="M40 33 v12 a4 4 0 0 0 8 0 v-12 z" fill="#a86a32" />
-                <text
-                  x="60"
-                  y="75"
-                  font-size="11"
-                  font-weight="700"
-                  text-anchor="middle"
-                  fill="#ffffff"
-                  stroke="#00000055"
-                  stroke-width=".4"
-                >
-                  WELDON
-                </text>
-              </svg>
+            <div class="card-img">
+              <svg style="color: #c4623b"><use href="#can" /></svg>
+            </div>
+            <div class="card-body">
+              <h3>Terracotta</h3>
+              <p>Rich clay tone with UV protection. 4 L</p>
+              <p class="price">Rs 5,400</p>
+              <a class="btn btn-dark" href="#contact">Order now</a>
+            </div>
+          </article>
+          <article class="card">
+            <div class="card-img">
+              <svg style="color: #2f6b4a"><use href="#can" /></svg>
+            </div>
+            <div class="card-body">
+              <h3>Forest Green</h3>
+              <p>Deep fade-proof colour. 4 L</p>
+              <p class="price">Rs 5,400</p>
+              <a class="btn btn-dark" href="#contact">Order now</a>
+            </div>
+          </article>
+          <article class="card">
+            <div class="card-img">
+              <svg style="color: #2a4fa8"><use href="#can" /></svg>
+            </div>
+            <div class="card-body">
+              <h3>Royal Blue</h3>
+              <p>Bold gate and wall colour. 4 L</p>
+              <p class="price">Rs 5,400</p>
+              <a class="btn btn-dark" href="#contact">Order now</a>
+            </div>
+          </article>
+        </div>
+
+        <!-- Wood -->
+        <h2 class="title" id="wood">
+          <span class="material-symbols-outlined">carpenter</span> Wood Finishes
+        </h2>
+        <div class="cards">
+          <article class="card">
+            <span class="badge">New</span>
+            <div class="card-img">
+              <svg style="color: #a86a32"><use href="#can" /></svg>
             </div>
             <div class="card-body">
               <h3>Teak Stain</h3>
-              <p>Brings out natural grain. 1 L.</p>
+              <p>Brings out natural grain. 1 L</p>
               <p class="price">Rs 1,850</p>
-              <a
-                class="btn btn-dark"
-                href="https://wa.me/923001234567"
-                target="_blank"
-                ><span class="material-symbols-outlined">shopping_cart</span>
-                Order now</a
-              >
+              <a class="btn btn-dark" href="#contact">Order now</a>
             </div>
           </article>
           <article class="card">
-            <div class="card-img" style="background-color: #11182733">
-              <svg
-                viewBox="0 0 120 120"
-                width="120"
-                height="120"
-                aria-hidden="true"
-              >
-                <path
-                  d="M30 38 Q60 8 90 38"
-                  fill="none"
-                  stroke="#6b7280"
-                  stroke-width="4"
-                />
-                <rect
-                  x="26"
-                  y="34"
-                  width="68"
-                  height="72"
-                  rx="6"
-                  fill="#d1d5db"
-                />
-                <rect
-                  x="26"
-                  y="52"
-                  width="68"
-                  height="36"
-                  fill="#111827"
-                  stroke="#9ca3af"
-                  stroke-width="1"
-                />
-                <ellipse cx="60" cy="34" rx="34" ry="8" fill="#9ca3af" />
-                <ellipse cx="60" cy="33" rx="28" ry="5" fill="#111827" />
-                <path d="M40 33 v12 a4 4 0 0 0 8 0 v-12 z" fill="#111827" />
-                <text
-                  x="60"
-                  y="75"
-                  font-size="11"
-                  font-weight="700"
-                  text-anchor="middle"
-                  fill="#ffffff"
-                  stroke="#00000055"
-                  stroke-width=".4"
-                >
-                  WELDON
-                </text>
-              </svg>
+            <div class="card-img">
+              <svg style="color: #5c3a21"><use href="#can" /></svg>
+            </div>
+            <div class="card-body">
+              <h3>Walnut Stain</h3>
+              <p>Deep brown wood colour. 1 L</p>
+              <p class="price">Rs 1,850</p>
+              <a class="btn btn-dark" href="#contact">Order now</a>
+            </div>
+          </article>
+          <article class="card">
+            <div class="card-img">
+              <svg style="color: #e6c98a"><use href="#can" /></svg>
+            </div>
+            <div class="card-body">
+              <h3>Clear Varnish</h3>
+              <p>Glossy transparent protection. 1 L</p>
+              <p class="price">Rs 1,600</p>
+              <a class="btn btn-dark" href="#contact">Order now</a>
+            </div>
+          </article>
+          <article class="card">
+            <div class="card-img">
+              <svg style="color: #7a2e1d"><use href="#can" /></svg>
+            </div>
+            <div class="card-body">
+              <h3>Mahogany Polish</h3>
+              <p>Classic furniture polish. 1 L</p>
+              <p class="price">Rs 1,950</p>
+              <a class="btn btn-dark" href="#contact">Order now</a>
+            </div>
+          </article>
+        </div>
+
+        <!-- Enamel -->
+        <h2 class="title" id="enamel">
+          <span class="material-symbols-outlined">construction</span> Enamel
+          &amp; Metal Paints
+        </h2>
+        <div class="cards">
+          <article class="card">
+            <span class="badge">New</span>
+            <div class="card-img">
+              <svg style="color: #111827"><use href="#can" /></svg>
             </div>
             <div class="card-body">
               <h3>Gloss Black</h3>
-              <p>High-shine rust protection. 1 L.</p>
+              <p>High-shine rust protection. 1 L</p>
               <p class="price">Rs 1,700</p>
-              <a
-                class="btn btn-dark"
-                href="https://wa.me/923001234567"
-                target="_blank"
-                ><span class="material-symbols-outlined">shopping_cart</span>
-                Order now</a
-              >
+              <a class="btn btn-dark" href="#contact">Order now</a>
             </div>
           </article>
           <article class="card">
-            <div class="card-img" style="background-color: #e5e7eb33">
-              <svg
-                viewBox="0 0 120 120"
-                width="120"
-                height="120"
-                aria-hidden="true"
-              >
-                <path
-                  d="M30 38 Q60 8 90 38"
-                  fill="none"
-                  stroke="#6b7280"
-                  stroke-width="4"
-                />
-                <rect
-                  x="26"
-                  y="34"
-                  width="68"
-                  height="72"
-                  rx="6"
-                  fill="#d1d5db"
-                />
-                <rect
-                  x="26"
-                  y="52"
-                  width="68"
-                  height="36"
-                  fill="#e5e7eb"
-                  stroke="#9ca3af"
-                  stroke-width="1"
-                />
-                <ellipse cx="60" cy="34" rx="34" ry="8" fill="#9ca3af" />
-                <ellipse cx="60" cy="33" rx="28" ry="5" fill="#e5e7eb" />
-                <path d="M40 33 v12 a4 4 0 0 0 8 0 v-12 z" fill="#e5e7eb" />
-                <text
-                  x="60"
-                  y="75"
-                  font-size="11"
-                  font-weight="700"
-                  text-anchor="middle"
-                  fill="#ffffff"
-                  stroke="#00000055"
-                  stroke-width=".4"
-                >
-                  WELDON
-                </text>
-              </svg>
+            <div class="card-img">
+              <svg style="color: #d11a2a"><use href="#can" /></svg>
+            </div>
+            <div class="card-body">
+              <h3>Signal Red</h3>
+              <p>Bright and durable. 1 L</p>
+              <p class="price">Rs 1,750</p>
+              <a class="btn btn-dark" href="#contact">Order now</a>
+            </div>
+          </article>
+          <article class="card">
+            <div class="card-img">
+              <svg style="color: #b8bec7"><use href="#can" /></svg>
+            </div>
+            <div class="card-body">
+              <h3>Silver Metallic</h3>
+              <p>Aluminium shine for metal. 1 L</p>
+              <p class="price">Rs 1,900</p>
+              <a class="btn btn-dark" href="#contact">Order now</a>
+            </div>
+          </article>
+          <article class="card">
+            <div class="card-img">
+              <svg style="color: #f5c518"><use href="#can" /></svg>
+            </div>
+            <div class="card-body">
+              <h3>Safety Yellow</h3>
+              <p>High-visibility colour. 1 L</p>
+              <p class="price">Rs 1,750</p>
+              <a class="btn btn-dark" href="#contact">Order now</a>
+            </div>
+          </article>
+        </div>
+
+        <!-- Primers -->
+        <h2 class="title" id="primers">
+          <span class="material-symbols-outlined">layers</span> Primers &amp;
+          Putty
+        </h2>
+        <div class="cards">
+          <article class="card">
+            <span class="badge">New</span>
+            <div class="card-img">
+              <svg style="color: #e5e7eb"><use href="#can" /></svg>
             </div>
             <div class="card-body">
               <h3>Wall Primer</h3>
-              <p>Water-based base coat. 4 L.</p>
+              <p>Water-based base coat. 4 L</p>
               <p class="price">Rs 2,600</p>
-              <a
-                class="btn btn-dark"
-                href="https://wa.me/923001234567"
-                target="_blank"
-                ><span class="material-symbols-outlined">shopping_cart</span>
-                Order now</a
-              >
+              <a class="btn btn-dark" href="#contact">Order now</a>
             </div>
           </article>
           <article class="card">
-            <div class="card-img" style="background-color: #f28c1e33">
-              <svg
-                viewBox="0 0 120 120"
-                width="120"
-                height="120"
-                aria-hidden="true"
-              >
-                <rect
-                  x="52"
-                  y="10"
-                  width="16"
-                  height="50"
-                  rx="6"
-                  fill="#b45309"
-                />
-                <rect x="42" y="58" width="36" height="18" fill="#9ca3af" />
-                <path d="M42 76 h36 l-4 32 h-28 z" fill="#f28c1e" />
-              </svg>
+            <div class="card-img">
+              <svg style="color: #9b3b2c"><use href="#can" /></svg>
+            </div>
+            <div class="card-body">
+              <h3>Red Oxide Primer</h3>
+              <p>Anti-rust base for metal. 1 L</p>
+              <p class="price">Rs 1,250</p>
+              <a class="btn btn-dark" href="#contact">Order now</a>
+            </div>
+          </article>
+          <article class="card">
+            <div class="card-img">
+              <svg style="color: #f3f4f6"><use href="#can" /></svg>
+            </div>
+            <div class="card-body">
+              <h3>Wall Putty</h3>
+              <p>Smooth white putty. 20 kg</p>
+              <p class="price">Rs 2,900</p>
+              <a class="btn btn-dark" href="#contact">Order now</a>
+            </div>
+          </article>
+          <article class="card">
+            <div class="card-img">
+              <svg style="color: #4b5563"><use href="#can" /></svg>
+            </div>
+            <div class="card-body">
+              <h3>Waterproof Coat</h3>
+              <p>Roof and wall sealing. 4 L</p>
+              <p class="price">Rs 4,200</p>
+              <a class="btn btn-dark" href="#contact">Order now</a>
+            </div>
+          </article>
+        </div>
+
+        <!-- Tools -->
+        <h2 class="title" id="tools">
+          <span class="material-symbols-outlined">brush</span> Brushes &amp;
+          Tools
+        </h2>
+        <div class="cards">
+          <article class="card">
+            <span class="badge">New</span>
+            <div class="card-img">
+              <svg style="color: #f28c1e"><use href="#brush" /></svg>
             </div>
             <div class="card-body">
               <h3>Flat Brush 3 inch</h3>
               <p>Soft bristles, no shedding.</p>
               <p class="price">Rs 450</p>
-              <a
-                class="btn btn-dark"
-                href="https://wa.me/923001234567"
-                target="_blank"
-                ><span class="material-symbols-outlined">shopping_cart</span>
-                Order now</a
-              >
+              <a class="btn btn-dark" href="#contact">Order now</a>
+            </div>
+          </article>
+          <article class="card">
+            <div class="card-img">
+              <svg style="color: #2a4fa8"><use href="#roller" /></svg>
+            </div>
+            <div class="card-body">
+              <h3>Roller Set</h3>
+              <p>9 inch roller with handle.</p>
+              <p class="price">Rs 950</p>
+              <a class="btn btn-dark" href="#contact">Order now</a>
+            </div>
+          </article>
+          <article class="card">
+            <div class="card-img">
+              <svg style="color: #1b3a6b"><use href="#brush" /></svg>
+            </div>
+            <div class="card-body">
+              <h3>Angular Brush</h3>
+              <p>For edges and corners.</p>
+              <p class="price">Rs 380</p>
+              <a class="btn btn-dark" href="#contact">Order now</a>
+            </div>
+          </article>
+          <article class="card">
+            <div class="card-img">
+              <svg style="color: #d11a2a"><use href="#roller" /></svg>
+            </div>
+            <div class="card-body">
+              <h3>Mini Roller</h3>
+              <p>Ideal for doors and trim.</p>
+              <p class="price">Rs 420</p>
+              <a class="btn btn-dark" href="#contact">Order now</a>
             </div>
           </article>
         </div>
 
-        <h2 class="title" id="colors">
-          <span class="material-symbols-outlined">palette</span> Popular colours
-        </h2>
-        <div class="swatches">
-          <div class="swatch">
-            <div class="dot" style="background-color: #f5f0e6"></div>
-            White
-          </div>
-          <div class="swatch">
-            <div class="dot" style="background-color: #8ec5e8"></div>
-            Sky
-          </div>
-          <div class="swatch">
-            <div class="dot" style="background-color: #a9c4a0"></div>
-            Sage
-          </div>
-          <div class="swatch">
-            <div class="dot" style="background-color: #f4b393"></div>
-            Peach
-          </div>
-          <div class="swatch">
-            <div class="dot" style="background-color: #c4623b"></div>
-            Terracotta
-          </div>
-          <div class="swatch">
-            <div class="dot" style="background-color: #2a4fa8"></div>
-            Royal
-          </div>
-          <div class="swatch">
-            <div class="dot" style="background-color: #2f6b4a"></div>
-            Forest
-          </div>
-          <div class="swatch">
-            <div class="dot" style="background-color: #f6e58d"></div>
-            Lemon
-          </div>
-          <div class="swatch">
-            <div class="dot" style="background-color: #b9b5ae"></div>
-            Grey
-          </div>
-          <div class="swatch">
-            <div class="dot" style="background-color: #a86a32"></div>
-            Teak
-          </div>
-          <div class="swatch">
-            <div class="dot" style="background-color: #d11a2a"></div>
-            Red
-          </div>
-          <div class="swatch">
-            <div class="dot" style="background-color: #111827"></div>
-            Black
-          </div>
-        </div>
-
+        <!-- About -->
         <h2 class="title" id="about">
           <span class="material-symbols-outlined">storefront</span> Why Weldon
         </h2>
@@ -596,7 +505,7 @@
           </div>
           <div class="feature">
             <span class="material-symbols-outlined big">palette</span>
-            <h3>Computer colour matching</h3>
+            <h3>Colour matching</h3>
             <p>Bring a sample and we match it exactly.</p>
           </div>
           <div class="feature">
@@ -607,36 +516,13 @@
           <div class="feature">
             <span class="material-symbols-outlined big">support_agent</span>
             <h3>Expert advice</h3>
-            <p>Our team helps you pick the right paint.</p>
+            <p>We help you pick the right paint.</p>
           </div>
-        </div>
-
-        <h2 class="title">
-          <span class="material-symbols-outlined">reviews</span> Customer
-          reviews
-        </h2>
-        <div class="features">
-          <blockquote class="quote">
-            <span class="material-symbols-outlined">format_quote</span>
-            <p>
-              Weldon matched my old wall colour perfectly. Finish is excellent.
-            </p>
-            <cite>Sana, Kohat</cite>
-          </blockquote>
-          <blockquote class="quote">
-            <span class="material-symbols-outlined">format_quote</span>
-            <p>Good prices on exterior paint and the delivery was quick.</p>
-            <cite>Imran, Peshawar</cite>
-          </blockquote>
-          <blockquote class="quote">
-            <span class="material-symbols-outlined">format_quote</span>
-            <p>Staff suggested the right primer and saved me money.</p>
-            <cite>Bilal, Hangu</cite>
-          </blockquote>
         </div>
       </main>
     </div>
 
+    <!-- Footer -->
     <footer class="footer" id="contact">
       <div class="footer-cols">
         <div class="footer-col">
@@ -678,7 +564,7 @@
             >
           </p>
           <p>
-            <a href="https://wa.me/923001234567" target="_blank"
+            <a href="https://wa.me/923443248489" target="_blank"
               ><span class="material-symbols-outlined">chat</span> WhatsApp</a
             >
           </p>
